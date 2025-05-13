@@ -132,251 +132,235 @@ let select = document.getElementById("select");
 console.log(select.value);
 
 products.forEach((e) => {
+  let card = document.createElement("div");
+  card.setAttribute("class", "card");
+  card.setAttribute("data-aos", "zoom-in");
+  card.setAttribute("data-aos-duration", "1500");
 
-    let card = document.createElement("div");
-    card.setAttribute("class", "card");
+  let cardImg = document.createElement("img");
+  cardImg.setAttribute("src", e.Image);
 
-    let cardImg = document.createElement("img");
-    cardImg.setAttribute("src", e.Image);
+  let cardTitle = document.createElement("h1");
+  cardTitle.innerText = e.title;
 
-    let cardTitle = document.createElement("h1");
-    cardTitle.innerText = e.title;
+  let cardGender = document.createElement("h2");
+  cardGender.innerText = e.gender;
 
-    let cardGender = document.createElement("h2");
-    cardGender.innerText = e.gender;
+  let cardPrice = document.createElement("p");
+  cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
 
-    let cardPrice = document.createElement("p");
-    cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-    
+  card.appendChild(cardImg);
+  card.appendChild(cardTitle);
+  card.appendChild(cardGender);
+  card.appendChild(cardPrice);
 
-    card.appendChild(cardImg);
-    card.appendChild(cardTitle);
-    card.appendChild(cardGender);
-    card.appendChild(cardPrice);
-    
-    container.appendChild(card);
-
+  container.appendChild(card);
 });
 
-select.addEventListener("change", function(){
+select.addEventListener("change", function () {
   let selectValue = select.value;
 
-  switch (selectValue){
-
-    case 'opt1' :
+  switch (selectValue) {
+    case "opt1":
       container.innerHTML = "";
       products.forEach((e) => {
-
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-    
+
         let cardImg = document.createElement("img");
         cardImg.setAttribute("src", e.Image);
-    
+
         let cardTitle = document.createElement("h1");
         cardTitle.innerText = e.title;
-    
+
         let cardGender = document.createElement("h2");
         cardGender.innerText = e.gender;
-    
+
         let cardPrice = document.createElement("p");
-        cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-        
-    
+        cardPrice.innerText =
+          "₹ " + Math.floor(e.price).toLocaleString("en-IN");
+
         card.appendChild(cardImg);
         card.appendChild(cardTitle);
         card.appendChild(cardGender);
         card.appendChild(cardPrice);
-        
+
         container.appendChild(card);
-    
       });
       break;
 
-    case 'opt2' :
+    case "opt2":
       container.innerHTML = "";
       let male = products.filter((e) => e.gender == "male");
       male.forEach((e) => {
-
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-    
+
         let cardImg = document.createElement("img");
         cardImg.setAttribute("src", e.Image);
-    
+
         let cardTitle = document.createElement("h1");
         cardTitle.innerText = e.title;
-    
+
         let cardGender = document.createElement("h2");
         cardGender.innerText = e.gender;
-    
+
         let cardPrice = document.createElement("p");
-        cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-        
-    
+        cardPrice.innerText =
+          "₹ " + Math.floor(e.price).toLocaleString("en-IN");
+
         card.appendChild(cardImg);
         card.appendChild(cardTitle);
         card.appendChild(cardGender);
         card.appendChild(cardPrice);
-        
+
         container.appendChild(card);
-    
       });
       break;
 
-    case 'opt3' :
+    case "opt3":
       container.innerHTML = "";
       let female = products.filter((e) => e.gender == "female");
       female.forEach((e) => {
-
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-    
+
         let cardImg = document.createElement("img");
         cardImg.setAttribute("src", e.Image);
-    
+
         let cardTitle = document.createElement("h1");
         cardTitle.innerText = e.title;
-    
+
         let cardGender = document.createElement("h2");
         cardGender.innerText = e.gender;
-    
+
         let cardPrice = document.createElement("p");
-        cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-        
-    
+        cardPrice.innerText =
+          "₹ " + Math.floor(e.price).toLocaleString("en-IN");
+
         card.appendChild(cardImg);
         card.appendChild(cardTitle);
         card.appendChild(cardGender);
         card.appendChild(cardPrice);
-        
+
         container.appendChild(card);
-    
       });
       break;
-    
-    case 'opt4' :
+
+    case "opt4":
       container.innerHTML = "";
       let unisex = products.filter((e) => e.gender == "unisex");
       unisex.forEach((e) => {
-
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-    
+
         let cardImg = document.createElement("img");
         cardImg.setAttribute("src", e.Image);
-    
+
         let cardTitle = document.createElement("h1");
         cardTitle.innerText = e.title;
-    
+
         let cardGender = document.createElement("h2");
         cardGender.innerText = e.gender;
-    
+
         let cardPrice = document.createElement("p");
-        cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-        
-    
+        cardPrice.innerText =
+          "₹ " + Math.floor(e.price).toLocaleString("en-IN");
+
         card.appendChild(cardImg);
         card.appendChild(cardTitle);
         card.appendChild(cardGender);
         card.appendChild(cardPrice);
-        
+
         container.appendChild(card);
-    
       });
       break;
-    
-    case 'opt5' :
+
+    case "opt5":
       container.innerHTML = "";
       let cloth = products.filter((e) => e.Type == "cloth");
       cloth.forEach((e) => {
-
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-    
+
         let cardImg = document.createElement("img");
         cardImg.setAttribute("src", e.Image);
-    
+
         let cardTitle = document.createElement("h1");
         cardTitle.innerText = e.title;
-    
+
         let cardGender = document.createElement("h2");
         cardGender.innerText = e.gender;
-    
+
         let cardPrice = document.createElement("p");
-        cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-        
-    
+        cardPrice.innerText =
+          "₹ " + Math.floor(e.price).toLocaleString("en-IN");
+
         card.appendChild(cardImg);
         card.appendChild(cardTitle);
         card.appendChild(cardGender);
         card.appendChild(cardPrice);
-        
+
         container.appendChild(card);
-    
       });
       break;
-    
-    case 'opt6' :
+
+    case "opt6":
       container.innerHTML = "";
       let footwear = products.filter((e) => e.Type == "footwear");
       footwear.forEach((e) => {
-
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-    
+
         let cardImg = document.createElement("img");
         cardImg.setAttribute("src", e.Image);
-    
+
         let cardTitle = document.createElement("h1");
         cardTitle.innerText = e.title;
-    
+
         let cardGender = document.createElement("h2");
         cardGender.innerText = e.gender;
-    
+
         let cardPrice = document.createElement("p");
-        cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-        
-    
+        cardPrice.innerText =
+          "₹ " + Math.floor(e.price).toLocaleString("en-IN");
+
         card.appendChild(cardImg);
         card.appendChild(cardTitle);
         card.appendChild(cardGender);
         card.appendChild(cardPrice);
-        
+
         container.appendChild(card);
-    
       });
       break;
 
-    case 'opt7' :
+    case "opt7":
       container.innerHTML = "";
       let wallet = products.filter((e) => e.Type == "wallet");
       wallet.forEach((e) => {
-
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-    
+
         let cardImg = document.createElement("img");
         cardImg.setAttribute("src", e.Image);
-    
+
         let cardTitle = document.createElement("h1");
         cardTitle.innerText = e.title;
-    
+
         let cardGender = document.createElement("h2");
         cardGender.innerText = e.gender;
-    
+
         let cardPrice = document.createElement("p");
-        cardPrice.innerText = "₹ " + Math.floor(e.price).toLocaleString("en-IN");
-        
-    
+        cardPrice.innerText =
+          "₹ " + Math.floor(e.price).toLocaleString("en-IN");
+
         card.appendChild(cardImg);
         card.appendChild(cardTitle);
         card.appendChild(cardGender);
         card.appendChild(cardPrice);
-        
+
         container.appendChild(card);
-    
       });
-      break;      
+      break;
   }
 });
